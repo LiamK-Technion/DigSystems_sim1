@@ -35,7 +35,7 @@ NAND2 #(
 );
 
 NAND2 #(
-    .Tpdhl(10), .Tphlh(10)
+    .Tpdhl(10), .Tpdlh(10)
 ) nand_4 (
     .A(b),
     .B(cin),
@@ -43,7 +43,7 @@ NAND2 #(
 );
 
 NAND2 #(
-    .Tphlh(10), .Tpdhl(10)
+    .Tpdlh(10), .Tpdhl(10)
 ) nand_5(
     .A(t3),
     .B(t4),
@@ -51,7 +51,7 @@ NAND2 #(
 );
 
 XNOR2 #(
-    .Tphlh(8), .Tpdhl(8)
+    .Tpdlh(8), .Tpdhl(8)
 ) xnor_6(
     .A(a),
     .B(b),
@@ -59,7 +59,7 @@ XNOR2 #(
 );
 
 XNOR2 #(
-    .Tphlh(8), .Tpdhl(8)
+    .Tpdlh(8), .Tpdhl(8)
 ) xnor_7(
     .A(t6),
     .B(cin),
