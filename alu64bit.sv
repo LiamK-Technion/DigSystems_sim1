@@ -8,10 +8,40 @@ module alu64bit (
     output logic cout        // Carry out
 );
 
-// Put your code here
-// ------------------
+logic [62:0] carry;
+//first ALU
+alu1bit alu_0 (
+    .a(a[0]),
+    .b(b[0]),
+    .cin(cin),
+    .op(op),
+    .s(s[0]),
+    .cout(carry[0])
+);
+//middle ALU
+genvar i;
+generate
+    for (i=1; i<63; i++)
+    begin
+        alut1bin alu_inst(
+            .a(a[i]),
+            .b(b[i]),
+            .cin(carry[i-1]),
+            .op(op),
+            .s(s[i]),
+            .cout(carry[i]));
+    end
+endgenerate
 
+//last ALU
+alu1bit alu_63 (
+    .a(a[63]),
+    .b(b[63]),
+    .cin(carry[62]),
+    .op(op),
+    .s(s[63]),
+    .cout(cout)
+);
 
-// End of your code
 
 endmodule
