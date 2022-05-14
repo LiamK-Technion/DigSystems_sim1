@@ -23,7 +23,7 @@ genvar i;
 generate
     for (i=1; i<63; i++)
     begin
-        alut1bin alu_inst(
+        alu1bit alu_inst(
             .a(a[i]),
             .b(b[i]),
             .cin(carry[i-1]),
